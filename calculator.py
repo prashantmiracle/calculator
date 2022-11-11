@@ -90,7 +90,7 @@ Button(root, text="exp", command=lambda: get_operation(
     '**')).grid(row=5, column=4)
 
 Button(root, text="<-", command=lambda: undo()).grid(row=2, column=5)
-Button(root, text="X!", command=lambda: get_operation('X!')).grid(row=3, column=5)
+Button(root, text="X!", command=lambda: get_operation('!')).grid(row=3, column=5)
 Button(root, text=")", command=lambda: get_operation(
     ')')).grid(row=4, column=5)
 Button(root, text="^2", command=lambda: get_operation(
