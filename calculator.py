@@ -27,7 +27,7 @@ Button(root, text="9").grid(row=4, column=2)
 # Adding other buttons in calculator
 Button(root, text="AC").grid(row=5, column=0)
 Button(root, text="0").grid(row=5, column=1)
-Button(root, text="=C").grid(row=5, column=2)
+Button(root, text="=").grid(row=5, column=2)
 
 Button(root, text="+").grid(row=2, column=3)
 Button(root, text="-").grid(row=3, column=3)
