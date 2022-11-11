@@ -37,6 +37,18 @@ def get_operation(operator):
     i += length
 
 
+def calculate():
+    entire_string = display.get()
+    try:
+        a = parser.expr(entire_string).compile()
+        result = eval(a)
+        clear_all()
+        display.insert(0, result)
+    except Exception:
+        clear_all()
+        display.insert(0, "error")
+
+
 # Adding input field
 display = Entry(root)
 display.grid(row=1, columnspan=6, sticky=W+E)
