@@ -34,7 +34,7 @@ def get_operation(operator):
     global i
     length = len(operator)
     display.insert(i, operator)
-    i += operator
+    i += length
 
 
 # Adding input field
@@ -58,26 +58,31 @@ Button(root, text="9", command=lambda: get_variables(9)).grid(row=4, column=2)
 
 # Adding other buttons in calculator
 Button(root, text="AC", command=lambda: clear_all()).grid(row=5, column=0)
-Button(root, text="0").grid(row=5, column=1)
+Button(root, text="0", command=lambda: get_variables(0)).grid(row=5, column=1)
 Button(root, text="=").grid(row=5, column=2)
 
-Button(root, text="+").grid(row=2, column=3)
-Button(root, text="-").grid(row=3, column=3)
-Button(root, text="*").grid(row=4, column=3)
-Button(root, text="/").grid(row=5, column=3)
+Button(root, text="+", command=lambda: get_operation('+')).grid(row=2, column=3)
+Button(root, text="-", command=lambda: get_operation('-')).grid(row=3, column=3)
+Button(root, text="*", command=lambda: get_operation('*')).grid(row=4, column=3)
+Button(root, text="/", command=lambda: get_operation('/')).grid(row=5, column=3)
 
 
 # adding new operations
 
-Button(root, text="pi").grid(row=2, column=4)
-Button(root, text="%").grid(row=3, column=4)
-Button(root, text="(").grid(row=4, column=4)
-Button(root, text="exp").grid(row=5, column=4)
+Button(root, text="pi", command=lambda: get_operation(
+    '*3.14')).grid(row=2, column=4)
+Button(root, text="%", command=lambda: get_operation('%')).grid(row=3, column=4)
+Button(root, text="(", command=lambda: get_operation(
+    '(')).grid(row=4, column=4)
+Button(root, text="exp", command=lambda: get_operation(
+    '**')).grid(row=5, column=4)
 
 Button(root, text="<-", command=lambda: undo()).grid(row=2, column=5)
-Button(root, text="X!").grid(row=3, column=5)
-Button(root, text=")").grid(row=4, column=5)
-Button(root, text="^2").grid(row=5, column=5)
+Button(root, text="X!", command=lambda: get_operation('X!')).grid(row=3, column=5)
+Button(root, text=")", command=lambda: get_operation(
+    ')')).grid(row=4, column=5)
+Button(root, text="^2", command=lambda: get_operation(
+    '**2')).grid(row=5, column=5)
 
 
 root.mainloop()
