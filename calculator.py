@@ -71,7 +71,7 @@ Button(root, text="9", command=lambda: get_variables(9)).grid(row=4, column=2)
 # Adding other buttons in calculator
 Button(root, text="AC", command=lambda: clear_all()).grid(row=5, column=0)
 Button(root, text="0", command=lambda: get_variables(0)).grid(row=5, column=1)
-Button(root, text="=").grid(row=5, column=2)
+Button(root, text="=", command=lambda: calculate()).grid(row=5, column=2)
 
 Button(root, text="+", command=lambda: get_operation('+')).grid(row=2, column=3)
 Button(root, text="-", command=lambda: get_operation('-')).grid(row=3, column=3)
