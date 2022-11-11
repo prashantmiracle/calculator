@@ -30,6 +30,13 @@ def undo():
         display.insert(0, "Error")
 
 
+def get_operation(operator):
+    global i
+    length = len(operator)
+    display.insert(i, operator)
+    i += operator
+
+
 # Adding input field
 display = Entry(root)
 display.grid(row=1, columnspan=6, sticky=W+E)
