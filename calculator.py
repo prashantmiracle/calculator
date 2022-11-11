@@ -3,7 +3,7 @@ import parser
 
 
 root = Tk()
-root.title('calculator')
+root.title('Studiorama calculator')
 
 # get the user input
 i = 0
@@ -41,12 +41,23 @@ def calculate():
     entire_string = display.get()
     try:
         a = parser.expr(entire_string).compile()
+
         result = eval(a)
         clear_all()
         display.insert(0, result)
     except Exception:
         clear_all()
         display.insert(0, "error")
+
+
+def get_fact():
+    n = int(display.get())
+
+    def fact(n):
+        return 1 if (n == 1 or n == 0) else n * fact(n - 1)
+    p = fact(n)
+    clear_all()
+    display.insert(0, p)
 
 
 # Adding input field
@@ -90,7 +101,7 @@ Button(root, text="exp", command=lambda: get_operation(
     '**')).grid(row=5, column=4)
 
 Button(root, text="<-", command=lambda: undo()).grid(row=2, column=5)
-Button(root, text="X!", command=lambda: get_operation('!')).grid(row=3, column=5)
+Button(root, text="X!", command=lambda: get_fact()).grid(row=3, column=5)
 Button(root, text=")", command=lambda: get_operation(
     ')')).grid(row=4, column=5)
 Button(root, text="^2", command=lambda: get_operation(
